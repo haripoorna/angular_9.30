@@ -1,0 +1,1 @@
+export const navPills = ['home', 'careers', 'login', 'registration' ];

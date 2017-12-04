@@ -1,0 +1,36 @@
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Digital Lync</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <!-- <li (click)="loadPage('home')">
+                <a href="#">home</a>
+            </li>
+            <li (click)="loadPage('login')">
+                <a href="#">login</a>
+            </li>
+            <li (click)="loadPage('registration')">
+                <a href="#">registration</a>
+            </li>
+            <li (click)="loadPage('careers')">
+                <a href="#">careers</a>
+            </li> -->
+            <li *ngFor="let item of navPills">
+                <a (click)="loadPage(item)">{{item}}</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div *ngIf="pageName == 'home'">
+    <app-body></app-body>
+</div>
+<div *ngIf="pageName == 'login'">
+    <app-login></app-login>
+</div>
+<div *ngIf="pageName == 'registration'">
+    <app-registration></app-registration>
+</div>
+<div *ngIf="pageName == 'careers'">
+    <app-careers></app-careers>
+</div>
