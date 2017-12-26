@@ -16,6 +16,7 @@ import { CareersComponent } from './careers/careers.component';
 import { RegistrationComponent } from './registration/registration.component';
 
 import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { ServerComponent } from './server/server.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
     LoginComponent,
     CareersComponent,
     RegistrationComponent,
+    ServerComponent,
   ],
   imports: [
     BrowserModule,

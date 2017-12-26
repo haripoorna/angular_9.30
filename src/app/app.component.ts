@@ -80,8 +80,7 @@ export class AppComponent {
               data.series.push(seriesELement);
               console.log(data);
           }
-        }
-      })
+      });
       // all rows in the csv file 
       console.log('>>>>>>>>>>>>>>>>>', lines);
     }
@@ -89,4 +88,5 @@ export class AppComponent {
 // onSelect(event) {
 //     console.log(event);
 //   } 
+// }
 }

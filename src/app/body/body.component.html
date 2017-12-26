@@ -1,3 +1,19 @@
-<p>
-  body works!
-</p>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 well">
+            <div class="form-group">
+                <label for="usr">server name:</label>
+                <input type="text" class="form-control" [(ngModel)]="serverName">
+            </div>
+            <div class="form-group">
+                <label for="pwd">server content:</label>
+                <input type="text" class="form-control" [(ngModel)]="serverContent">
+            </div>
+            <button (click)="connect()">connect</button>
+            <button (click)="bluePrintServer()">Blue print </button>
+        </div>
+        <div class="col-sm-12">
+            <app-server *ngFor="let serverElement of serverElements" [element]="serverElement"></app-server>
+        </div>
+    </div>
+</div>
