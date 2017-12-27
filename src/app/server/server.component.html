@@ -1,8 +1,16 @@
-<div class="container">
+<div class="container" *ngIf="element.type == 'server'">
     <div class="row">
         <div class="col-sm-12 well">
             <p>{{element.serverName}}</p>
             <b><p>{{element.serverContent}}</p></b>
+        </div>
+    </div>
+</div>
+<div class="container" *ngIf="element.type == 'bluePrint'">
+    <div class="row">
+        <div class="col-sm-12 well">
+            <p>{{element.serverName}}</p>
+            <em><p style="color:red;">{{element.serverContent}}</p></em>
         </div>
     </div>
 </div>

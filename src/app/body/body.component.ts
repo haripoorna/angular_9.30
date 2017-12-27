@@ -8,21 +8,23 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 })
 export class BodyComponent implements OnInit {
   
-  serverElements: any = [];
-  serverName : any = '';
-  serverContent: any = '';
-  constructor() { }
+
+  serverElements : any = []
+  constructor() {
+
+    this.serverElements = [{
+      type: 'server',
+      serverName: 'dummy server',
+      serverContent: 'dummy server content'
+    }]
+   }
 
   ngOnInit() {
   }
-  connect(){
-    this.serverElements.push({
-      serverName: this.serverName,
-      serverContent: this.serverContent
-    })
+  addServer(event){
+    this.serverElements.push(event);
   }
-  bluePrintServer(){
-    
+  addBluePrint(event){
+    this.serverElements.push(event);
   }
-
 }

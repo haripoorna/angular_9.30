@@ -1,0 +1,10 @@
+<div class="form-group">
+    <label for="usr">server name:</label>
+    <input type="text" class="form-control" [(ngModel)]="serverName">
+</div>
+<div class="form-group">
+    <label for="pwd">server content:</label>
+    <input type="text" class="form-control" [(ngModel)]="serverContent">
+</div>
+<button (click)="connect()">connect</button>
+<button (click)="bluePrintServer()">Blue print </button>
