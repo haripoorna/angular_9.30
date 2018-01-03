@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, Output, EventEmitter, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-server-edit',
@@ -12,26 +12,30 @@ export class ServerEditComponent implements OnInit {
   serverContent: any = '';
   @Output() onServerAdded = new EventEmitter<any>;
   @Output() onBluePrintServerAdded = new EventEmitter<any>;
+
+  @ViewChild('serverNameInput') serverNameInputValue: any ;
+  @ViewChild('serverContentInput') serverContentInputValue: any ;
   constructor() { }
 
   ngOnInit() {
   }
-  connect() {
+  connect(nameInput: HTMLInputElement, contentInput: HTMLInputElement) {
     // this.serverElements.push({
     //   serverName: this.serverName,
     //   serverContent: this.serverContent
     // })
+    console.log(nameInput);
     this.onServerAdded.emit({
       type : 'server',
-      serverName : this.serverName,
-      serverContent : this.serverContent
+      serverName : nameInput.value,
+      serverContent : contentInput.value
     });
   }
   bluePrintServer() {
     this.onBluePrintServerAdded.emit({
       type: 'bluePrint',
-      serverName: this.serverName,
-      serverContent: this.serverContent
+      serverName: this.serverNameInputValue.nativeElement.value,
+      serverContent: this.serverContentInputValue.nativeElement.value
     })
   }
 }

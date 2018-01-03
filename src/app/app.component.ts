@@ -1,3 +1,4 @@
+import { MessageService } from './_services/message.service';
 import { Component } from '@angular/core';
 
 
@@ -11,7 +12,7 @@ export class AppComponent {
   name: any = '';
   dataList: Array<any>;
   fileReaded: any;
-
+  messageObject:any;
   
 
 
@@ -28,7 +29,7 @@ export class AppComponent {
   // line, area
   autoScale = true;
 
-  constructor(){
+  constructor(private messageService: MessageService){
     this.dataList = [{ name: "series1", series: [
     {
       "name": "2010",
@@ -39,6 +40,10 @@ export class AppComponent {
       "value": 8940000
     }
   ] }];
+   this.messageService.sendMessage().subscribe((message:any )=> {
+      this.messageObject = message;
+  })
+
   }
   csv2Array(fileInput: any) {
     this.fileReaded = fileInput.target.files[0];

@@ -1,3 +1,4 @@
+import { MessageService } from './../_services/message.service';
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
 @Component({
@@ -10,7 +11,7 @@ export class BodyComponent implements OnInit {
   
 
   serverElements : any = []
-  constructor() {
+  constructor(private messageService: MessageService) {
 
     this.serverElements = [{
       type: 'server',
@@ -26,5 +27,11 @@ export class BodyComponent implements OnInit {
   }
   addBluePrint(event){
     this.serverElements.push(event);
+  }
+  sendMsg(){
+    this.messageService.getMessage('Hai, This is Message from the Body Component');
+  }
+  clearMsg(){
+    this.messageService.clearMessage();
   }
 }

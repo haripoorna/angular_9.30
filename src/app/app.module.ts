@@ -19,6 +19,8 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { ServerComponent } from './server/server.component';
 import { ServerEditComponent } from './server-edit/server-edit.component';
 
+import { MessageService } from './_services/message.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +39,7 @@ import { ServerEditComponent } from './server-edit/server-edit.component';
     NgxCropperModule,
     BrowserAnimationsModule,
   ],
-  providers: [],
+  providers: [MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
