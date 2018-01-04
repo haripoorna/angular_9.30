@@ -14,6 +14,6 @@ export class MessageService{
         return this.subject.next();
     }
     sendMessage(): Observable<any>{
-          return this.subject.asObservable(); 
+          return this.subject.asObservable();
     }
 }

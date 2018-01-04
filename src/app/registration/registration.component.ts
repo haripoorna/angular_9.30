@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { CommonService} from '../_services/common.service';
 
 @Component({
   selector: 'app-registration',
@@ -8,9 +9,19 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 })
 export class RegistrationComponent implements OnInit {
 
-  constructor() { }
+  countriesList: any;
+
+  constructor(private commonSvc: CommonService) {
+       }
 
   ngOnInit() {
+    this.commonSvc.getCountriesList().subscribe((data:any) => {
+      console.log(data);
+      this.countriesList = data;
+    })
+  }
+  submit(){
+    
   }
 
 }

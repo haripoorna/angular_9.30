@@ -1,3 +1,15 @@
-<p>
-  registration works!
-</p>
+<div class="form-group">
+  <label for="usr">Name:</label>
+  <input type="text" class="form-control" id="usr">
+</div>
+<div class="form-group">
+  <label for="pwd">Email:</label>
+  <input type="text" class="form-control" id="email">
+
+</div>
+<div>
+  <select class="form-control">
+    <option  *ngFor="let country of countriesList">{{country.name}}</option>
+  </select>
+</div>
+<button  class="btn btn-primary" (click)='submit()'>submit</button>
